@@ -6,17 +6,22 @@ public class BallSpeed : MonoBehaviour
 {
     public float ballSpeed;
     public Rigidbody2D rb_ball;
+    public Vector3 startPosition;
 
     // Start is called before the first frame update
     void Start()
     {
+        startPosition = transform.position;
         Begin();
     }
 
     // Update is called once per frame
-    void Update()
+    public void Reset() 
     {
-        
+        rb_ball.velocity = Vector2.zero;
+        transform.position = startPosition;
+        Begin();
+
     }
 
     private void Begin()
