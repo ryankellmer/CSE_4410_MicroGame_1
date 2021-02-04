@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2745fba6e7cc43148857deed5d3026a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPaddle1Win: 1
+  isPaddle1Win: 0
 --- !u!1 &198618285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,7 +1504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2745fba6e7cc43148857deed5d3026a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPaddle1Win: 0
+  isPaddle1Win: 1
 --- !u!1 &2119257357
 GameObject:
   m_ObjectHideFlags: 0

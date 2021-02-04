@@ -8,14 +8,14 @@ public class BallSpeed : MonoBehaviour
     public Rigidbody2D rb_ball;
     public Vector3 startPosition;
 
-    // Start is called before the first frame update
+    // Ball starts in the center.
     void Start()
     {
         startPosition = transform.position;
         Begin();
     }
 
-    // Update is called once per frame
+    // When called ball position is reset to the start position.
     public void Reset() 
     {
         rb_ball.velocity = Vector2.zero;
@@ -24,6 +24,7 @@ public class BallSpeed : MonoBehaviour
 
     }
 
+    //  Ball either goes downward and right or downward and left.
     private void Begin()
     {
         float x = Random.Range(0, 2) == 0 ? -1 : 1;

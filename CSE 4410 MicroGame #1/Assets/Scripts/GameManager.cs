@@ -5,7 +5,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // Create all the game objects.
     [Header("Ball")]
     public GameObject ball;
 
@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     private int Paddle1Score;
     private int Paddle2Score;
 
+    //  Then number is increased by 1 and updated to the scoreboard for Player 1. Then the ball and paddle are reset.
     public void Paddle1Point()
     {
         Paddle1Score++;
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
         ResetPosition();
     }
 
+    //  Then number is increased by 1 and updated to the scoreboard for Player 2. Then the ball and paddle are reset.
     public void Paddle2Point()
     {
         Paddle2Score++;
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour
         ResetPosition();
     }
 
+    // Paddle 1, Paddle 2, and the Ball are all set to the starting position.
     private void ResetPosition()
     {
         ball.GetComponent<BallSpeed>().Reset();
