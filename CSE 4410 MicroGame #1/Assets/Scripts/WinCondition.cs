@@ -9,7 +9,7 @@ public class WinCondition : MonoBehaviour
     public bool isPaddle1Win;
 
     // Determine which player gets the point.
-    private void OnTriggerEnter2D(Collider2D collision) 
+     private void OnTriggerEnter2D(Collider2D collision) 
     {
         // If the ball touches the left or right wall a point will be assigned.
         if(collision.gameObject.CompareTag("Ball"))

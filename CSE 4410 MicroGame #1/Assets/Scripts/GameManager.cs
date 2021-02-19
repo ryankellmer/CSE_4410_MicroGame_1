@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -23,6 +24,26 @@ public class GameManager : MonoBehaviour
 
     private int Paddle1Score;
     private int Paddle2Score;
+
+    void Update() 
+    {
+        // Player 1 wins if they reach 9 points first.
+        if(Paddle1Score >= 9)
+        {
+             Debug.Log("Player 1 Wins!!!");
+            //Time.timeScale = 0;
+            //enabled = false;
+            SceneManager.LoadScene("Player1Win");
+        }
+        // Player 2 wins if they reach 9 points first.
+        if(Paddle2Score >= 9)
+        {
+            Debug.Log("Player 2 Wins!!!");
+            //Time.timeScale = 0;
+            //enabled = false;
+            SceneManager.LoadScene("Player2Win");
+        }
+    }
 
     //  Then number is increased by 1 and updated to the scoreboard for Player 1. Then the ball and paddle are reset.
     public void Paddle1Point()
@@ -47,4 +68,5 @@ public class GameManager : MonoBehaviour
         Paddle1.GetComponent<PaddleMovement>().Reset();
         Paddle2.GetComponent<PaddleMovement>().Reset();
     }
+
 }

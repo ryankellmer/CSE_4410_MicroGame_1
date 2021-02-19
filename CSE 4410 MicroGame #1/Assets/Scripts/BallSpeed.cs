@@ -1,18 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class BallSpeed : MonoBehaviour
 {
     public float ballSpeed;
     public Rigidbody2D rb_ball;
     public Vector3 startPosition;
+    public AudioSource bounce;
 
-    // Ball starts in the center.
-    void Start()
+        // Ball starts in the center.
+        public void Start()
     {
+        bounce = GetComponent<AudioSource> ();
         startPosition = transform.position;
-        Begin();
+        Invoke("Begin", 1.0f);
+    }
+
+    public void  OnCollisionEnter2D(Collision2D collision2D) 
+    {
+        bounce.Play();
     }
 
     // When called ball position is reset to the start position.
@@ -20,8 +28,7 @@ public class BallSpeed : MonoBehaviour
     {
         rb_ball.velocity = Vector2.zero;
         transform.position = startPosition;
-        Begin();
-
+        Invoke("Begin", 1.0f);
     }
 
     //  Ball either goes downward and right or downward and left.
